@@ -1,6 +1,4 @@
 import { Link } from 'react-router-dom'
-import folha from '../../assets/images/folha.png'
-import folha2 from '../../assets/images/folha2.png'
 import logo from '../../assets/images/logo.png'
 
 const Login = () => {
