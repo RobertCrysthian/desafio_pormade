@@ -13,7 +13,7 @@ export default function Modal ({isOpen, closeModal, children}) {
                         onClick={closeModal}
                     />
                 </div>
-                <div>
+                <div className='w-full h-full flex flex-col items-center'>
                     {children}
                 </div>
                 </div>

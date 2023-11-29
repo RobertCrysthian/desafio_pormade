@@ -5,7 +5,6 @@ const Login = () => {
     return (
         <div className="w-full h-screen  flex">
             <div className='flex flex-col w-1/3 justify-end'>
-                {/* <img className='w-96 h-96' src={folha2} alt='Imagem da folha' /> */}
             </div>
             <div className='flex flex-col w-1/3 '>
                 <div className='flex flex-col items-center justify-start'>
@@ -22,13 +21,12 @@ const Login = () => {
                         <p className='text-white_pormade my-2'>Manter-me Conectado</p>
                     </div>
                     <div className='flex flex-col items-center'>
-                        <Link to='/' className='text-white_pormade bg-light_green rounded-xl w-2/4 h-9 mt-2 text-2xl flex items-start justify-center'>Acessar</Link>
+                        <Link to='/1' className='text-white_pormade bg-light_green rounded-xl w-2/4 h-9 mt-2 text-2xl flex items-start justify-center'>Acessar</Link>
                         <button className='text-white_pormade mt-2'>Suporte</button>
                     </div>
                 </div>
             </div>
             <div className='flex flex-row-reverse w-1/3 align-bottom'>
-                {/* <img className='w-96 h-96 flex align-bottom' src={folha} alt='Imagem da outra folha' /> */}
             </div>
         </div>
     )
