@@ -1,20 +1,15 @@
 import { useEffect, useState } from "react"
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
-import { MdOutlineAdminPanelSettings, MdOutlineShoppingCart, MdOutlineWatchLater } from "react-icons/md";
-import { useNavigate, useParams } from "react-router-dom";
-
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import CardProduct from "../../Components/CardProduct";
-import Modal from "../../Components/Modal";
 import api from "../../http/api";
-import CartItem from "../../Components/CartItem";
 
 
 const Home = () => {
-    const navigate = useNavigate()
+
     const [productData, setProductData] = useState([])
-    const [openModal, setOpenModal] = useState(false)
     const params = useParams()
+    const navigate = useNavigate()
 
     const fetchData = () => {
         api.get(`produtos/lista?pagina=${params.id - 1}&itens=6`)
@@ -24,8 +19,6 @@ const Home = () => {
     const nextPage = () => {
         navigate(`/${parseInt(params.id) + 1}`)
         window.location.reload()
-
-
     }
 
     const previousPage = () => {
@@ -39,10 +32,10 @@ const Home = () => {
         fetchData()
     }, [])
 
+
     console.log(productData)
 
-
-    return (
+    return(
         <div className="w-full h-full flex justify-end items-center py-10">
 
             <div className="w-11/12 h-5/6 flex items-center flex-col bg-black rounded-3xl border-2 border-light_green mr-10">
@@ -71,7 +64,7 @@ const Home = () => {
 
                     <IoIosArrowForward
                         className='w-9 h-9 text-white_pormade cursor-pointer'
-                        onClick={() => nextPage()}
+                        onClick={() => nextPage}
                     />
                 </footer>
             </div>

@@ -17,8 +17,12 @@ const router = createBrowserRouter( [
           element: <Home/>
         },
         {
-          path: '/editUsers',
-          element: <EditUser/>
+          path: '/editarUsuarios',
+          element: <EditUser secondCol={'Nome Completo'} thirdCol={'CPF'}/>
+        },
+        {
+          path: '/editarProdutos',
+          element: <EditUser secondCol={'Produto'} thirdCol={'Preço'}/>
         }
     ]
 
