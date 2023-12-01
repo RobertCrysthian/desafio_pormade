@@ -6,6 +6,7 @@ import Home from './Pages/Home/index.jsx'
 import ProductDetail from './Pages/ProductDetails/index.jsx'
 import Login from './Pages/Login/index.jsx'
 import EditUser from './Pages/EditUsers/index.jsx'
+import EditProducts from './Pages/EditProducts/index.jsx'
 
 const router = createBrowserRouter( [
   {
@@ -13,16 +14,16 @@ const router = createBrowserRouter( [
     element: <App />,
     children: [
         {
-          path: '/:id',
+          path: 'home/:id',
           element: <Home/>
         },
         {
           path: '/editarUsuarios',
-          element: <EditUser secondCol={'Nome Completo'} thirdCol={'CPF'}/>
+          element: <EditUser/>
         },
         {
           path: '/editarProdutos',
-          element: <EditUser secondCol={'Produto'} thirdCol={'Preço'}/>
+          element: <EditProducts/>
         }
     ]
 

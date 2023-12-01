@@ -17,6 +17,7 @@ export default {
         black: '#000000;',
         black_modal: '#0A0A0A',
         yellow: '#FFC700',
+        red_pormade: '#C90000'
       },
     },
   },

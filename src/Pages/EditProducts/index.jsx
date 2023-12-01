@@ -3,28 +3,30 @@ import { MdDeleteForever } from "react-icons/md";
 import { ImPencil } from "react-icons/im";
 import ModalDelete from "../../ComponentsAdmin/ModalDelete/indes";
 import { useContext, useState } from "react";
+import ModalEditUser from "../../ComponentsAdmin/ModalNewUser";
 import { MenuContext } from "../../Contexts/MenuContext";
 import { CgList } from "react-icons/cg";
-import ModalEditUser from "../../ComponentsAdmin/ModalEditUser";
+import ModalEditProducts from "../../ComponentsAdmin/ModalEditProducts";
 
 
 
 
 
 
-export default function EditUser() {
+export default function EditProducts() {
 
     const {newUser, setNewUser} = useContext(MenuContext)
+    const [showDeleteModal, setShowDeleteModal] = useState(false)
     const {deletar, setDeletar} = useContext(MenuContext)
-    const [openEditModal, setOpenEditModal] = useState(false)
-
+    const {newProduct, setNewProduct} = useContext(MenuContext)
+    const [openEditForm, setOpenEditForm] = useState(false)
 
     return (
         <div className='w-screen h-screen flex flex-col items-center'>
             <div className='flex w-full h-14 justify-between mt-6'>
                 <button
                     className='text-white_pormade bg-light_green rounded-lg w-1/6 h-9 text-2xl flex justify-center ml-36'
-                    onClick={() => setNewUser(!newUser)}
+                    onClick={() => setNewProduct(!newProduct)}
                 >
                     <div className='flex justify-center w-full items-center'>
                         <FaPlus className='text-white mr-4' />
@@ -41,8 +43,8 @@ export default function EditUser() {
                     <thead className='bg-light_green rounded-tl-lg rounded-tr-3xl'>
                         <tr>
                             <td className='rounded-tl-lg border-r-2 border-black text-bold text-2xl'>ID</td>
-                            <td className='border-r-2 border-black text-bold text-2xl'>Nome Completo</td>
-                            <td className='border-r-2 border-black text-bold text-2xl'>CPF</td>
+                            <td className='border-r-2 border-black text-bold text-2xl'>Produto</td>
+                            <td className='border-r-2 border-black text-bold text-2xl'>Preço</td>
                             <td className='rounded-tr-lg text-bold text-2xl'>Ações</td>
                         </tr>
                     </thead>
@@ -57,9 +59,9 @@ export default function EditUser() {
                                 <div className='flex justify-between items-center mx-3'>
                                     <div className='flex justify-around w-2/6 items-center'>
                                         <CgList className='w-10 h-10'/>
-                                        <ImPencil 
+                                        <ImPencil
+                                            onClick={() => setOpenEditForm(!openEditForm)} 
                                             className='w-8 h-8 cursor-pointer'
-                                            onClick={() => setOpenEditModal(!openEditModal)}
                                         />
                                     </div>
                                     <MdDeleteForever 
@@ -72,8 +74,9 @@ export default function EditUser() {
                     </tbody>
                 </table>
             </div>
-            <ModalDelete word='usuário' />
-            <ModalEditUser user={openEditModal} setUser={setOpenEditModal}/>
+            <ModalDelete word='produto'/>
+            <ModalEditProducts newProduct={openEditForm} setNewProduct={setOpenEditForm}/>
+            
         </div>
     )
 }
